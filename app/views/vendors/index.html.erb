@@ -1,0 +1,31 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Website</th>
+    <th>Cuisine</th>
+    <th>Location</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to vendor.name, vendor %></td>
+    <td><%= vendor.description %></td>
+    <td><%= vendor.website %></td>
+    <td><%= vendor.cuisine %></td>
+    <td><%= vendor.location %></td>
+    <td><%= vendor.price %></td>
+    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vendor', new_vendor_path %>
